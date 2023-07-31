@@ -1,13 +1,14 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
     return (
         <div>
             <nav className="navbar navbar-expand-lg bg-white py-3 shadow-sm">
                 <div className="container">
-                    <a className="navbar-brand fw-bold fs-4" href="#">
+                    <NavLink className="navbar-brand fw-bold fs-4" to="/">
                         LA COLLECTION
-                    </a>
+                    </NavLink>
                     <button
                         className="navbar-toggler"
                         type="button"
@@ -25,42 +26,51 @@ const Navbar = () => {
                     >
                         <ul className="navbar-nav mx-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <a
+                                <NavLink
                                     className="nav-link active"
                                     aria-current="page"
-                                    href="#"
+                                    to="/"
                                 >
                                     Home
-                                </a>
+                                </NavLink>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">
+                                <NavLink className="nav-link" to="/products">
                                     Products
-                                </a>
+                                </NavLink>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">
+                                <NavLink className="nav-link" to="/about">
                                     About
-                                </a>
+                                </NavLink>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">
+                                <NavLink className="nav-link" to="/contact">
                                     Contact
-                                </a>
+                                </NavLink>
                             </li>
                         </ul>
                         <div className="buttons">
-                            <a href="" className="btn btn-outline-dark">
+                            <NavLink
+                                to="/login"
+                                className="btn btn-outline-dark"
+                            >
                                 <i className="fa fa-sign-in me-1"></i> Login
-                            </a>
-                            <a href="" className="btn btn-outline-dark ms-2">
+                            </NavLink>
+                            <NavLink
+                                to="/register"
+                                className="btn btn-outline-dark ms-2"
+                            >
                                 <i className="fa fa-user-plus me-1"></i>
                                 Register
-                            </a>
-                            <a href="" className="btn btn-outline-dark ms-2">
+                            </NavLink>
+                            <NavLink
+                                to="/cart"
+                                className="btn btn-outline-dark ms-2"
+                            >
                                 <i className="fa fa-shopping-cart me-1"></i>
                                 Cart(0)
-                            </a>
+                            </NavLink>
                         </div>
                     </div>
                 </div>
