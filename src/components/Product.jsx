@@ -3,6 +3,8 @@ import Skeleton from 'react-loading-skeleton';
 import { useDispatch } from 'react-redux';
 import { NavLink, useParams } from 'react-router-dom';
 import { addItem } from '../redux/action';
+import { Modal, Button } from 'react-bootstrap';
+import ModalWindow from './Modal';
 
 const Product = () => {
     const { id } = useParams();
@@ -71,12 +73,9 @@ const Product = () => {
                     </p>
                     <h3 className="display-6 fw-bold my-4">${product.price}</h3>
                     <p className="lead">{product.description}</p>
-                    <button
-                        className="btn btn-outline-dark"
-                        onClick={() => addProduct(product)}
-                    >
-                        Add to Cart
-                    </button>
+
+                    <ModalWindow addProduct={addProduct} product={product} />
+
                     <NavLink
                         to="/cart"
                         className="btn btn-outline-dark ms-2 px-3 py-2"

@@ -23,7 +23,6 @@ const Cart = () => {
     };
 
     const cartItems = (cartItem) => {
-        console.log(cartItem.quantity);
         return (
             <div className="px-4 my-5 bg-light rounded-3" key={cartItem.id}>
                 <div className="container py-4">
@@ -82,6 +81,7 @@ const Cart = () => {
             </div>
         );
     };
+    console.log(state);
 
     return (
         <>

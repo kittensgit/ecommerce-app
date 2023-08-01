@@ -31,14 +31,18 @@ const addItems = (state = addItem, action) => {
                 }
                 return item;
             });
-
         case 'DECREASE_QUANTITY':
-            return state.map((item) => {
-                if (item.id === action.payload.id && item.quantity > 1) {
-                    return { ...item, quantity: item.quantity - 1 };
-                }
-                return item;
-            });
+            return state
+                .map((item) =>
+                    item.id === action.payload.id
+                        ? {
+                              ...item,
+                              quantity:
+                                  item.quantity > 0 ? item.quantity - 1 : 0,
+                          }
+                        : item
+                )
+                .filter((item) => item.quantity > 0); // Удаляем товары с количеством <= 0
 
         default:
             return state;
