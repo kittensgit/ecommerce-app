@@ -1,6 +1,6 @@
 // for add item to cart
 
-export const addCart = (product) => {
+export const addItem = (product) => {
     return {
         type: 'ADDITEM',
         payload: product,
@@ -8,7 +8,7 @@ export const addCart = (product) => {
 };
 // for delete item from cart
 
-export const delCart = (product) => {
+export const delItem = (product) => {
     return {
         type: 'DELITEM',
         payload: product,

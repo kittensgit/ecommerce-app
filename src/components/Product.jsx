@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Skeleton from 'react-loading-skeleton';
 import { useDispatch } from 'react-redux';
 import { NavLink, useParams } from 'react-router-dom';
-import { addCart } from '../redux/action';
+import { addItem } from '../redux/action';
 
 const Product = () => {
     const { id } = useParams();
@@ -11,7 +11,7 @@ const Product = () => {
 
     const dispatch = useDispatch();
     const addProduct = (product) => {
-        dispatch(addCart(product));
+        dispatch(addItem(product));
     };
 
     useEffect(() => {
