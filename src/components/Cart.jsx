@@ -1,7 +1,11 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { delItem } from '../redux/action';
+import {
+    decreaseItemQuantity,
+    delItem,
+    increaseItemQuantity,
+} from '../redux/action';
 
 const Cart = () => {
     const state = useSelector((state) => state.handleCart);
@@ -11,7 +15,15 @@ const Cart = () => {
         dispatch(delItem(item));
     };
 
+    const handlePlus = (id) => {
+        dispatch(increaseItemQuantity(id));
+    };
+    const handleMinus = (id) => {
+        dispatch(decreaseItemQuantity(id));
+    };
+
     const cartItems = (cartItem) => {
+        console.log(cartItem.quantity);
         return (
             <div className="px-4 my-5 bg-light rounded-3" key={cartItem.id}>
                 <div className="container py-4">
@@ -32,6 +44,26 @@ const Cart = () => {
                         <div className="col-md-4">
                             <h3>{cartItem.title}</h3>
                             <p className="lead fw-bold">${cartItem.price}</p>
+                            <p className="lead fw-bold">
+                                {cartItem.quantity} X ${cartItem.price} = $
+                                {cartItem.quantity * cartItem.price}
+                            </p>
+                            <button
+                                onClick={() => {
+                                    handlePlus(cartItem.id);
+                                }}
+                                className="btn btn-outline-dark me-2"
+                            >
+                                <i class="fa fa-solid fa-plus"></i>
+                            </button>
+                            <button
+                                onClick={() => {
+                                    handleMinus(cartItem.id);
+                                }}
+                                className="btn btn-outline-dark"
+                            >
+                                <i class="fa fa-solid fa-minus"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
