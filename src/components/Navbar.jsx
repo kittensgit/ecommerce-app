@@ -9,7 +9,10 @@ const Navbar = () => {
         <div>
             <nav className="navbar navbar-expand-lg bg-white py-3 shadow-sm">
                 <div className="container">
-                    <NavLink className="navbar-brand fw-bold fs-4" to="/">
+                    <NavLink
+                        className="navbar-brand fw-bold fs-4"
+                        to="/ecommerce-app"
+                    >
                         LA COLLECTION
                     </NavLink>
                     <button
@@ -32,7 +35,7 @@ const Navbar = () => {
                                 <NavLink
                                     className="nav-link active"
                                     aria-current="page"
-                                    to="/"
+                                    to="/ecommerce-app"
                                 >
                                     Home
                                 </NavLink>
