@@ -1,4 +1,5 @@
 import React from 'react';
+import contact from './../photos/contact.png';
 
 const Contact = () => {
     return (
@@ -13,7 +14,7 @@ const Contact = () => {
                 <div className="row">
                     <div className="col-md 5 d-flex justify-content-center">
                         <img
-                            src="/assets/contact.png"
+                            src={contact}
                             alt="Contact Us"
                             height="300px"
                             width="300px"
@@ -21,47 +22,50 @@ const Contact = () => {
                     </div>
                     <div className="col-md-6">
                         <form>
-                            <div class="mb-3">
-                                <label for="exampleForm" class="form-label">
+                            <div className="mb-3">
+                                <label
+                                    htmlFor="exampleForm"
+                                    className="form-label"
+                                >
                                     Full Name
                                 </label>
                                 <input
                                     type="text"
-                                    class="form-control"
+                                    className="form-control"
                                     id="exampleForm"
                                     placeholder="John Smith"
                                 />
                             </div>
-                            <div class="mb-3">
+                            <div className="mb-3">
                                 <label
-                                    for="exampleFormControlInput1"
-                                    class="form-label"
+                                    htmlFor="exampleFormControlInput1"
+                                    className="form-label"
                                 >
                                     Email address
                                 </label>
                                 <input
                                     type="email"
-                                    class="form-control"
+                                    className="form-control"
                                     id="exampleFormControlInput1"
                                     placeholder="name@example.com"
                                 />
                             </div>
-                            <div class="mb-3">
+                            <div className="mb-3">
                                 <label
-                                    for="exampleFormControlTextarea1"
-                                    class="form-label"
+                                    htmlFor="exampleFormControlTextarea1"
+                                    className="form-label"
                                 >
                                     Example textarea
                                 </label>
                                 <textarea
-                                    class="form-control"
+                                    className="form-control"
                                     id="exampleFormControlTextarea1"
                                     rows="5"
                                 ></textarea>
                             </div>
                             <button
                                 type="submit"
-                                class="btn btn-outline-primary"
+                                className="btn btn-outline-primary"
                             >
                                 Send Message
                             </button>

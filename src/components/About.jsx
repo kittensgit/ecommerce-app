@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import about from './../photos/about.png';
 
 const About = () => {
     return (
@@ -35,7 +36,7 @@ const About = () => {
                     </div>
                     <div className="col-md-6 d-flex justify-content-center">
                         <img
-                            src="/assets/about.png"
+                            src={about}
                             alt="About Us"
                             height="400px"
                             width="400px"
